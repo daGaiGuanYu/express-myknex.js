@@ -2,3 +2,4 @@ node_modules
 *.tgz
 *.sqlite3
 *.sqlite
+.test.js

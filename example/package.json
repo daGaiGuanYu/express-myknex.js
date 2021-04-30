@@ -3,7 +3,7 @@
     "express": "^4.17.1",
     "express-myknex": "file:../code/express-myknex-0.0.1.tgz",
     "knex": "^0.95.4",
-    "myknex": "^0.1.1",
+    "myknex": "file:../../myknex/code/myknex-0.1.1.tgz",
     "sqlite3": "^5.0.2"
   }
 }
