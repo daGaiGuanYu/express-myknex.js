@@ -1,0 +1,22 @@
+{
+  "name": "express-myknex",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+  },
+  "keywords": [
+    "orm", "knex", "express"
+  ],
+  "author": "gy",
+  "license": "ISC",
+
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/daGaiGuanYu/express-myknex.js.git"
+  },
+  "homepage": "https://github.com/daGaiGuanYu/express-myknex#readme",
+  "bugs": {
+    "url": "https://github.com/daGaiGuanYu/express-myknex/issues"
+  }
+}
