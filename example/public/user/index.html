@@ -1,0 +1,42 @@
+<h1>所有用户</h1>
+<a href="/user/form.html">新增</a>
+<table>
+  <thead>
+    <tr>
+      <th>用户名</th>
+      <th>电话</th>
+      <th>操作</th>
+    </tr>
+  </thead>
+  <tbody></tbody>
+</table>
+<script type="module">
+import fetch from '../fetch.js'
+
+fetch.get('/user').then( list => {
+  tbody.innerHTML = list.map( item => `
+    <tr>
+      <td>${item.name}</td>
+      <td>${item.tel}</td>
+      <td>
+        <a href="/user/form.html?${item.id}">编辑</a>
+        <a href="javascript: dropItem(${item.id})">删除</a>
+      </td>
+    </tr>
+  `).join('')
+})
+
+var tbody = document.querySelector('tbody')
+
+window.dropItem = function(id){
+  const confirmed = confirm('确定删除此用户吗')
+  if(!confirmed) return
+  fetch.delete('/user', { id }).then(res => {
+    if(res.deleted == 1){
+      alert('已删除')
+      window.location.reload()
+    } else
+      alert('出问题了')
+  })
+}
+</script>

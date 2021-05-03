@@ -1,0 +1,27 @@
+<form action="/user" method="post">
+  <input name="id" type="hidden" />
+  <label>
+    用户名<input name="name" />
+  </label>
+  <label>
+    电话<input name="tel" />
+  </label>
+  <button type="submit">提交</button>
+</form>
+
+<script type="module">
+import fetch from '../fetch.js'
+
+const id = location.search.slice(1)
+if(id){
+  fetch.get('/user?id=' + id)
+    .then( ([record]) => {
+      nameInput.value = record.name
+      telInput.value = record.tel
+      idInput.value = record.id
+    })
+var nameInput = document.querySelector('[name=name]')
+var telInput = document.querySelector('[name=tel]')
+var idInput = document.querySelector('[name=id]')
+}
+</script>
